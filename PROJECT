@@ -1,0 +1,3 @@
+version: "2"
+domain: positiverobot.com
+repo: github.com/olibye/ssh-operator

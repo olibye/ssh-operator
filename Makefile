@@ -1,3 +1,4 @@
+OS_OPTIONS=env GOOS=linux GOARCH=arm GOARM=5
 
 # Image URL to use all building/pushing image targets
 IMG ?= controller:latest
@@ -12,7 +13,7 @@ test: generate fmt vet manifests
 
 # Build manager binary
 manager: generate fmt vet
-	go build -o bin/manager main.go
+	${OS_OPTIONS} go build -o bin/manager main.go
 
 # Run against the configured Kubernetes cluster in ~/.kube/config
 run: generate fmt vet
